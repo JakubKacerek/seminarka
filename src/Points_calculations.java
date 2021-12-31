@@ -38,12 +38,14 @@ public class Points_calculations {
         return totalWeight;
     }
 
-    static void centerOfGravity(){
 
+    static double hypotenuseCalc(double num1, double num2){
+        double temp = Math.pow(num1, 2) + Math.pow(num2, 2);
+        return Math.sqrt(temp);
     }
 
-    static void hypotenuseCalc(double num1, double num2){
-
+    static double totalLength(double x, double y, double z){
+        return hypotenuseCalc(hypotenuseCalc(x, y), z);
     }
 
 }

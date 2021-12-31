@@ -22,9 +22,14 @@ public class Controller {
         System.out.println("Těžnice bodů Y: "+ Points_calculations.weightingPointsY(objects));
         System.out.println("Těžnice bodů Z: "+ Points_calculations.weightingPointsZ(objects));
         System.out.println("Celková hmostnost působící na těžiště: "+ Points_calculations.totalWeight(objects));
+        System.out.println(
+                "Celková vzdálenost těžiště od počátku: "
+                + Points_calculations.totalLength(Points_calculations.weightingPointsX(objects)
+                , Points_calculations.weightingPointsY(objects)
+                , Points_calculations.weightingPointsZ(objects)));
 
-        Points_Sorter.quickSort(objects, 0, objects.length-1);
-        Points_Sorter.printArray(objects, objects.length);
+       // Points_Sorter.quickSort(objects, 0, objects.length-1);
+       // Points_Sorter.printArray(objects, objects.length);
 
     }
 }
