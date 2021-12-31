@@ -18,51 +18,13 @@ public class Controller {
             objects[i] = point;
         }
 
-        System.out.println("\nTěžnice bodů X: "+ weightingPointsX());
-        System.out.println("Těžnice bodů Y: "+ weightingPointsY());
-        System.out.println("Těžnice bodů Z: "+ weightingPointsZ());
-        System.out.println("Celková hmostnost působící na těžiště: "+ totalWeight());
+        System.out.println("\nTěžnice bodů X: "+ Points_calculations.weightingPointsX(objects));
+        System.out.println("Těžnice bodů Y: "+ Points_calculations.weightingPointsY(objects));
+        System.out.println("Těžnice bodů Z: "+ Points_calculations.weightingPointsZ(objects));
+        System.out.println("Celková hmostnost působící na těžiště: "+ Points_calculations.totalWeight(objects));
 
         Points_Sorter.quickSort(objects, 0, objects.length-1);
         Points_Sorter.printArray(objects, objects.length);
 
-    }
-
-    static double weightingPointsX(){
-        double weightedPointX = 0;
-        for (int i = 0; i < objects.length; i++){
-            double temp = objects[i].getX() * objects[i].getW();
-            weightedPointX += temp;
-        }
-        weightedPointX /= objects.length;
-        return weightedPointX;
-    }
-
-    static double weightingPointsY(){
-        double weightedPointY = 0;
-        for (int i = 0; i < objects.length; i++){
-            double temp = objects[i].getY() * objects[i].getW();
-            weightedPointY += temp;
-        }
-        weightedPointY /= objects.length;
-        return weightedPointY;
-    }
-
-    static double weightingPointsZ(){
-        double weightedPointZ = 0;
-        for (int i = 0; i < objects.length; i++){
-            double temp = objects[i].getZ() * objects[i].getW();
-            weightedPointZ += temp;
-        }
-        weightedPointZ /= objects.length;
-        return weightedPointZ;
-    }
-
-    static double totalWeight(){
-        double totalWeight = 0;
-        for (int i = 0; i < objects.length; i++){
-            totalWeight += objects[i].getW();
-        }
-        return totalWeight;
     }
 }
