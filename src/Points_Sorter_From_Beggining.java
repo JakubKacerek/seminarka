@@ -1,4 +1,4 @@
-public class Points_Sorter {
+public class Points_Sorter_From_Beggining {
 
     static void swap(Points[] obj, int index1, int index2){
         Points temp = obj[index1];
@@ -8,12 +8,12 @@ public class Points_Sorter {
 
     static int partition(Points[] obj, int low, int high) {
 
-        double pivot = obj[high].getX() + obj[high].getY() + obj[high].getZ();
+        double pivot = Points_Calculations.totalLength(obj[high].getX(), obj[high].getY(), obj[high].getZ());
         int i = (low - 1);
 
         for(int j = low; j <= high - 1; j++)
         {
-            if (obj[j].getX() + obj[j].getY() + obj[j].getZ() < pivot)
+            if (Points_Calculations.totalLength(obj[j].getX(), obj[j].getY(), obj[j].getZ()) < pivot)
             {
                 i++;
                 swap(obj, i, j);
@@ -29,10 +29,10 @@ public class Points_Sorter {
             total = obj[i].getX() + obj[i].getY() + obj[i].getZ();
             System.out.println(
                     "x - " + obj[i].getX()
-                    + ", y - " + obj[i].getY()
-                    + ", z - " + obj[i].getZ()
-                    + ", weight - " + obj[i].getW()
-                    + ", total length - " + total);
+                            + ", y - " + obj[i].getY()
+                            + ", z - " + obj[i].getZ()
+                            + ", weight - " + obj[i].getW()
+                            + ", total length - " + total);
         }
         System.out.println();
     }

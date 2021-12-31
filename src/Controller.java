@@ -18,18 +18,19 @@ public class Controller {
             objects[i] = point;
         }
 
-        System.out.println("\nTěžnice bodů X: "+ Points_calculations.weightingPointsX(objects));
-        System.out.println("Těžnice bodů Y: "+ Points_calculations.weightingPointsY(objects));
-        System.out.println("Těžnice bodů Z: "+ Points_calculations.weightingPointsZ(objects));
-        System.out.println("Celková hmostnost působící na těžiště: "+ Points_calculations.totalWeight(objects));
+        System.out.println("\nTěžnice bodů X: "+ Points_Calculations.weightingPointsX(objects));
+        System.out.println("Těžnice bodů Y: "+ Points_Calculations.weightingPointsY(objects));
+        System.out.println("Těžnice bodů Z: "+ Points_Calculations.weightingPointsZ(objects));
+        System.out.println("Celková hmostnost působící na těžiště: "+ Points_Calculations.totalWeight(objects));
         System.out.println(
                 "Celková vzdálenost těžiště od počátku: "
-                + Points_calculations.totalLength(Points_calculations.weightingPointsX(objects)
-                , Points_calculations.weightingPointsY(objects)
-                , Points_calculations.weightingPointsZ(objects)));
+                + Points_Calculations.totalLength(Points_Calculations.weightingPointsX(objects)
+                , Points_Calculations.weightingPointsY(objects)
+                , Points_Calculations.weightingPointsZ(objects)));
+        System.out.println();
+        Points_Sorter_From_Beggining.quickSort(objects, 0, objects.length-1);
+        Points_Sorter_From_Beggining.printArray(objects, objects.length);
 
-       // Points_Sorter.quickSort(objects, 0, objects.length-1);
-       // Points_Sorter.printArray(objects, objects.length);
 
     }
 }

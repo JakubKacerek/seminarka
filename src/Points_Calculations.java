@@ -1,4 +1,4 @@
-public class Points_calculations {
+public class Points_Calculations {
 
     static double weightingPointsX(Points[] objects){
         double weightedPointX = 0;
