@@ -1,6 +1,6 @@
 public class Points_Calculations {
 
-    static double weightingPointsX(Points[] objects){
+    static double weightingPointsX(Points[] objects) {
         double weightedPointX = 0;
         for (Points object : objects) {
             double temp = object.getX() * object.getW();
@@ -10,7 +10,7 @@ public class Points_Calculations {
         return weightedPointX;
     }
 
-    static double weightingPointsY(Points[] objects){
+    static double weightingPointsY(Points[] objects) {
         double weightedPointY = 0;
         for (Points object : objects) {
             double temp = object.getY() * object.getW();
@@ -20,7 +20,7 @@ public class Points_Calculations {
         return weightedPointY;
     }
 
-    static double weightingPointsZ(Points[] objects){
+    static double weightingPointsZ(Points[] objects) {
         double weightedPointZ = 0;
         for (Points object : objects) {
             double temp = object.getZ() * object.getW();
@@ -30,7 +30,7 @@ public class Points_Calculations {
         return weightedPointZ;
     }
 
-    static double totalWeight(Points[] objects){
+    static double totalWeight(Points[] objects) {
         double totalWeight = 0;
         for (Points object : objects) {
             totalWeight += object.getW();
@@ -38,12 +38,12 @@ public class Points_Calculations {
         return totalWeight;
     }
 
-    static double hypotenuseCalc(double num1, double num2){
+    static double hypotenuseCalc(double num1, double num2) {
         double temp = Math.pow(num1, 2) + Math.pow(num2, 2);
         return Math.sqrt(temp);
     }
 
-    static double totalLength(double x, double y, double z){
+    static double totalLength(double x, double y, double z) {
         return hypotenuseCalc(hypotenuseCalc(x, y), z);
     }
 
